@@ -1,6 +1,9 @@
 #include <iostream>
+#include "potion.cpp"
 
 using namespace std;
+
+#define MAXHP 30
 
 class Pokemon {
 
@@ -14,7 +17,7 @@ class Pokemon {
         Pokemon() {
             atk = 10;
             def = 5;
-            hp = 20;
+            hp = MAXHP;
         }
 
         string getName() {
@@ -51,11 +54,26 @@ class Pokemon {
 
         void incHp(int hp) {
             this->hp += hp;
+            if ( this->hp > MAXHP ) {
+                this->hp = MAXHP;
+            }
         }
 
         void decHp(int hp) {
             this->hp -= hp;
+            if ( this->hp < 0 ) {
+                this->hp = 0;
+            }
         }
 
-        
+        void usePotion() {
+            Item *hibrido;
+            Potion referencia;
+            hibrido = &referencia;
+            incHp(hibrido->getHealingValue());
+        }
+
+        int getMaxHp() {
+            return MAXHP;
+        }
 };
