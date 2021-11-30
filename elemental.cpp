@@ -1,6 +1,4 @@
-#include "pokemon.cpp"
-
-class Elemental:public Pokemon {
+class Elemental{
 
     private:
         int type;
