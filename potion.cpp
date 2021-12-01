@@ -8,10 +8,12 @@ class Potion: public Item {
 
     private:
         int healingValue;
+        int usedValue;
 
     public:
         Potion() {
             healingValue = VALUE;
+            
         }
 
         //SOBRECARGA
